@@ -74,7 +74,7 @@ Editar Registro |
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-2 mb-3">
+                                <div class="col-md-1 mb-3">
                                     <label for="diaspersonal">Días</label>
                                     <input type="text" class="form-control" name="diaspersonal" id="diaspersonal" readonly>
                                 </div>
@@ -82,7 +82,7 @@ Editar Registro |
                                     <label for="anioperiodo">Año Periodo</label>
                                     <input type="text" class="form-control" name="anioperiodo" id="anioperiodo" value="{{ $tp->anio_periodo }}">
                                 </div>
-                                <div class="col-md-5 mb-3">
+                                <div class="col-md-3 mb-3">
                                     <label for="observaciones">Observaciones</label>
                                     <input type="text" class="form-control" name="observaciones" id="observaciones" value="{{ $tp->comentario }}" maxlength="60">
                                 </div>
@@ -90,10 +90,14 @@ Editar Registro |
                                     <label for="documento_ref">Documento Sustentario</label>
                                     <input type="text" class="form-control" name="documento_ref" id="documento_ref" value="{{ $tp->documento }}" maxlength="40">
                                 </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="numero_contacto">Número de Contacto</label>
+                                    <input type="text" class="form-control" name="numero_contacto" id="numero_contacto" value="{{ $tp->numero_contacto }}" maxlength="9">
+                                </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
-                                    <a href="{{route('general')}}" class="btn btn-danger" style="padding-bottom: -40px;"><i class="fas fa-undo-alt"></i> Volver</a>
+                                    <a href="#" class="btn btn-danger" style="padding-bottom: -40px;" onclick="history.back()"><i class="fas fa-undo-alt"></i> Volver</a>
                                 </div>
                                 <div class="col-md-6 d-flex justify-content-end">
                                     <button class="btn btn-primary mt-2" type="submit"><i class="fas fa-save"></i> Editar Registro

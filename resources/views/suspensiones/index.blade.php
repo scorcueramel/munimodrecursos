@@ -48,6 +48,7 @@ Suspensiones |
                                         <th style="color: #fff">PERIODO</th>
                                         <th style="color: #fff">DOCUMENTO</th>
                                         <th style="color: #fff">OBSERVACIÓN</th>
+                                        <th style="color: #fff">NRO CONTACTO</th>
                                         @can('EDITAR-SUSPENSIONES')
                                         <th style="color: #fff" colspan="2" class="text-center">OPCIONES</th>
                                         @endcan
@@ -125,6 +126,9 @@ Suspensiones |
                 },
                 {
                     data: 'obs'
+                },
+                {
+                    data: 'nro_contacto'
                 },
                 {
                     data: 'editar'

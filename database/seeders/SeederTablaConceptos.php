@@ -16,7 +16,7 @@ class SeederTablaConceptos extends Seeder
     {
         Conceptos::create([
             'tipo_permiso_id'=>2,
-            'descripcion'=>'DESCANSO MEDICO',
+            'descripcion'=>'20 PRIMEROS DÍAS DESCANSO MÉDICO',
             'codigo_pdt'=>"20"
         ]);
         Conceptos::create([
@@ -26,7 +26,7 @@ class SeederTablaConceptos extends Seeder
         ]);
         Conceptos::create([
             'tipo_permiso_id'=>2,
-            'descripcion'=>'SUBSIDIO POR INCAPACIDAD TEMPORAL',
+            'descripcion'=>'SUBSIDIO POR ESSALUD',
             'codigo_pdt'=>"21"
         ]);
         Conceptos::create([

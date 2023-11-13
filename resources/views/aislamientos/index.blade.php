@@ -49,6 +49,7 @@ Aislamientos |
                                         <th style="color: #fff">PERIODO</th>
                                         <th style="color: #fff">DOCUMENTO</th>
                                         <th style="color: #fff">OBSERVACIÓN</th>
+                                        <th style="color: #fff">NRO CONTACTO</th>
                                         @can('EDITAR-AISLAMIENTOS')
                                         <th style="color: #fff" colspan="2" class="text-center">OPCIONES</th>
                                         @endcan
@@ -70,14 +71,14 @@ Aislamientos |
 <script>
     $(document).ready(function() {
         $('#max').on('change', function () {
-            if(minimo = $('#min').val() != "")
+            if($('#min').val() != "")
             {
                 $('#btnexportar').removeAttr("disabled");
             }
          });
 
          $('#min').on('change', function () {
-            if(minimo = $('#max').val() != "")
+            if($('#max').val() != "")
             {
                 $('#btnexportar').removeAttr("disabled");
             }
@@ -127,6 +128,9 @@ Aislamientos |
                 },
                 {
                     data: 'obs'
+                },
+                {
+                    data: 'nro_contacto'
                 },
                 {
                     data: 'editar'

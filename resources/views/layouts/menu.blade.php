@@ -52,12 +52,19 @@
     </a>
 </li>
 @endcan
+
+<li class="side-menus {{ Request::is('consultas') ? 'active' : '' }}">
+    <a class="nav-link" href="{{url('consultas')}}">
+        <i class="fas fa-binoculars"></i><span>Consultas</span>
+    </a>
+</li>
+
 {{--
 @can('VER-MARCADORES')
 <li class="side-menus {{ Request::is('marcadores') ? 'active' : '' }}">
-    <a class="nav-link" href="{{url('marcadores')}}">
-        <i class="fas fa-clock"></i><span>Marcadores</span>
-    </a>
+<a class="nav-link" href="{{url('marcadores')}}">
+    <i class="fas fa-clock"></i><span>Marcadores</span>
+</a>
 </li>
 @endcan
 --}}

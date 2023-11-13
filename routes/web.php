@@ -11,6 +11,7 @@ use App\Http\Controllers\VacacionesController;
 use App\Http\Controllers\DescansosMedicosController;
 use App\Http\Controllers\LicenciasController;
 use App\Http\Controllers\AislamientosController;
+use App\Http\Controllers\ConsultasController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\SuspensionesController;
 use App\Http\Controllers\TestController;
@@ -67,6 +68,9 @@ Route::group(['middleware'=>['auth']],function () {
     Route::post('descansosmedicos/export/', [DescansosMedicosController::class, 'export'])->name('descansosmedicos.export');
     Route::post('licencias/export/', [LicenciasController::class, 'export'])->name('licencias.export');
     Route::post('aislamientos/export/', [AislamientosController::class, 'export'])->name('aislamientos.export');
+
+    // Rutas para el apartado consultas
+    Route::get('/consultas', [ConsultasController::class,'index'])->name('consultas');
 
     // En observación, por las validaciones al cargar de forma masiva
     Route::get('cargamasiva', [RegistroController::class, 'cargamasiva'])->name('cargamasiva');

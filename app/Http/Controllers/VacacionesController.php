@@ -20,7 +20,7 @@ class VacacionesController extends Controller
         $tblvacaciones = Registro::join('dias_personals', 'registros.id', '=', 'dias_personals.id_registro')
             ->where('tipo_permiso_id', '=', 1)
             ->where('estado', '=', true)
-            ->select('registros.id', 'registros.codigo_persona', 'registros.documento_persona', 'registros.nombre_persona', 'registros.reglab_persona', 'registros.uniorg_persona', 'registros.fecha_inicio', 'registros.fecha_fin', 'registros.anio_periodo', 'registros.documento', 'registros.comentario', 'dias_personals.inicial as inicial');
+            ->select('registros.id', 'registros.codigo_persona', 'registros.documento_persona', 'registros.nombre_persona', 'registros.reglab_persona', 'registros.uniorg_persona', 'registros.fecha_inicio', 'registros.fecha_fin', 'registros.anio_periodo', 'registros.documento', 'registros.comentario', 'dias_personals.inicial as inicial','registros.numero_contacto');
 
         return datatables()->of($tblvacaciones)
             ->addColumn('editar', function ($row) {
@@ -64,7 +64,17 @@ class VacacionesController extends Controller
                 }
                 return $docsus;
             })
-            ->rawColumns(['editar', 'borrar', 'docsus', 'periodo', 'obs'])
+            ->addColumn('nro_contacto',function ($row){
+                $nro_contacto = "";
+                if($row['numero_contacto'] == "")
+                {
+                    $nro_contacto = "S/NC";
+                }else{
+                    $nro_contacto = $row['numero_contacto'];
+                }
+                return $nro_contacto;
+            })
+            ->rawColumns(['editar','borrar','docsus','periodo','obs','nro_contacto'])
             ->make(true);
     }
 

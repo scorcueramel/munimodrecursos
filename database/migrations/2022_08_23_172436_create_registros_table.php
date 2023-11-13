@@ -32,6 +32,8 @@ class CreateRegistrosTable extends Migration
             $table->string('documento',40)->nullable();
             $table->string('anio_periodo')->nullable();
             $table->string('comentario')->nullable();
+            // Se agrega la columna número de contacto (numero_contacto)
+            $table->string('numero_contacto')->nullable();
             $table->string('usuario_creador')->nullable();
             $table->string('usuario_editor')->nullable();
             $table->string('ip_usuario')->nullable();

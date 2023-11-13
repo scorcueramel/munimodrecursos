@@ -27,7 +27,7 @@ Vista General |
                                 </div>-->
 
                         </div>
-                        <form class="my-4" method="POST" action="{{ route('general.consultar') }}">
+                        <form class="my-4" method="POST" action="{{ route('general.consultar') }}" id="formulario">
                             @csrf
                             <div class="form-row">
                                 <div class="col-md-2">
@@ -49,8 +49,12 @@ Vista General |
                                     <input type="text" class="form-control" placeholder="APELLIDO MATERNO" id="materno" name="materno">
                                 </div>
                                 <div class="col-md-2 mt-2 d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-warning my-4" onclick="validarNumericos();"><i class="fas fa-search"></i> Buscar
+                                    <button type="submit" class="btn btn-warning my-4 boton" onclick="validarNumericos();"><i class="fas fa-search"></i> Buscar
                                     </button>
+                                    <p class="text-info pt-4" id="cargando" hidden>
+                                        <span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>
+                                        Buscando, porfavor espere ...
+                                    </p>
                                 </div>
                             </div>
                         </form>
@@ -123,6 +127,12 @@ Vista General |
 
 @section('scripts')
 <script>
+    $("#formulario").submit(function(e) {
+        // e.preventDefault();
+        $(".boton").attr("hidden", "hidden");
+        $("#cargando").removeAttr("hidden");
+    });
+
     function validarNumericos() {
         if ($('#codigo').val() > 999999) {
             $('#errorcode').css("display", "block");

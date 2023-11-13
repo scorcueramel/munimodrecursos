@@ -103,6 +103,7 @@ class RegistroController extends Controller
             $resp->anio_periodo = $request->anioperiodo;
             $resp->documento = $request->documento_ref;
             $resp->comentario = $request->observaciones;
+            $resp->numero_contacto = $request->numero_contacto;
             $resp->ip_usuario = request()->ip();
             $resp->usuario_editor = null;
             $resp->estado = 1;
@@ -230,6 +231,7 @@ class RegistroController extends Controller
             $resp->anio_periodo = $request->anioperiodo;
             $resp->documento = $request->documento_ref;
             $resp->comentario = $request->observaciones;
+            $resp->numero_contacto = $request->numero_contacto;
             $resp->ip_usuario = request()->ip();
             $resp->usuario_editor = Auth::user()->name;
             $resp->estado = 1;
