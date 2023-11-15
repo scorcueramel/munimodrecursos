@@ -26,7 +26,7 @@ class AislamientosExport implements FromCollection, WithCustomCsvSettings
         $query = DB::select(
             "select
             r.tipo_documento_persona, r.documento_persona, c.codigo_pdt,
-                    (     cast((case when r.fecha_fin > ? then ? else r.fecha_fin end) as date) -
+                    (cast((case when r.fecha_fin > ? then ? else r.fecha_fin end) as date) -
                           cast((case when r.fecha_inicio < ? then ? else r.fecha_inicio end) as date)
                           )+1 as dias
                         from registros r

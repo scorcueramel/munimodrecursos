@@ -32,7 +32,7 @@ Vista General |
                             <div class="form-row">
                                 <div class="col-md-2">
                                     <label for="codigo">CÓDIGO</label>
-                                    <input type="number" class="form-control" placeholder="CÓDIGO" id="codigo" name="codigo">
+                                    <input type="number" class="form-control" placeholder="CÓDIGO" id="codigo" name="codigo" value="{{old('codigo')}}">
                                     <span class="text-danger" style="display: none" id="errorcode">Revisa el codigo que ingresaste porfavor</span>
                                 </div>
                                 <div class="col-md-2">
@@ -42,11 +42,11 @@ Vista General |
                                 </div>
                                 <div class="col-md-3">
                                     <label for="paterno">AP. PATERNO</label>
-                                    <input type="text" class="form-control" placeholder="APELLIDO PATERNO" id="paterno" name="paterno">
+                                    <input type="text" class="form-control" placeholder="APELLIDO PATERNO" id="paterno" name="paterno" value={{old('paterno')}}>
                                 </div>
                                 <div class="col-md-3">
                                     <label for="materno">AP. MATERNO</label>
-                                    <input type="text" class="form-control" placeholder="APELLIDO MATERNO" id="materno" name="materno">
+                                    <input type="text" class="form-control" placeholder="APELLIDO MATERNO" id="materno" name="materno" value={{ old('materno') }}>
                                 </div>
                                 <div class="col-md-2 mt-2 d-flex justify-content-end">
                                     <button type="submit" class="btn btn-warning my-4 boton" onclick="validarNumericos();"><i class="fas fa-search"></i> Buscar

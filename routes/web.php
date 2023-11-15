@@ -14,8 +14,6 @@ use App\Http\Controllers\AislamientosController;
 use App\Http\Controllers\ConsultasController;
 use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\SuspensionesController;
-use App\Http\Controllers\TestController;
-use App\Http\Controllers\EditarController;
 use App\Http\Controllers\MarcadoresController;
 
 /*
@@ -71,6 +69,8 @@ Route::group(['middleware'=>['auth']],function () {
 
     // Rutas para el apartado consultas
     Route::get('/consultas', [ConsultasController::class,'index'])->name('consultas');
+    Route::post('/consultas', [ConsultasController::class,'total_dias'])->name('consulta.totaldias');
+    Route::post('/consulta/export/', [ConsultasController::class, 'export'])->name('consultas.export');
 
     // En observación, por las validaciones al cargar de forma masiva
     Route::get('cargamasiva', [RegistroController::class, 'cargamasiva'])->name('cargamasiva');

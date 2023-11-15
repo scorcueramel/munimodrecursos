@@ -32,7 +32,7 @@ class GeneralController extends Controller
                     return back()->with('resp', $res['contenido']);
                 } else {
                     $msn = "Porfavor Revisa el CÓDIGO que ingresaste";
-                    return back()->with('error', $msn);
+                    return back()->withInput()->with('error', $msn);
                 }
             } elseif (!is_null($dni)) {
                 $response = Http::acceptJson()->get('http://sistemas.munisurco.gob.pe/pidemss/servicios/siam/dat?P_APEPATERNO=&P_APEMATERNO=&P_CODIGO=0&P_VCHTIDCODIGO=&P_NUMDOCUMENTO=' . $dni . '&entidad=201&sistema=603&key=400');
@@ -43,7 +43,7 @@ class GeneralController extends Controller
                     return back()->with('resp', $res['contenido']);
                 } else {
                     $msn = "Porfavor Revisa el DNI que ingresaste";
-                    return back()->with('error', $msn);
+                    return back()->withInput()->with('error', $msn);
                 }
             } elseif (!is_null($paterno)) {
                 $ap_paterno = Str::upper($paterno);
@@ -56,7 +56,7 @@ class GeneralController extends Controller
                     return back()->with('resp', $res['contenido']);
                 } else {
                     $msn = "Porfavor Revisa el APELLIDO que ingresaste";
-                    return back()->with('error', $msn);
+                    return back()->withInput()->with('error', $msn);
                 }
             } elseif (!is_null($materno)) {
                 $ap_materno = Str::upper($materno);
@@ -69,12 +69,12 @@ class GeneralController extends Controller
                     return back()->with('resp', $res['contenido']);
                 } else {
                     $msn = "Porfavor Revisa el APELLIDO que ingresaste";
-                    return back()->with('error', $msn);
+                    return back()->withInput()->with('error', $msn);
                 }
             }
             if (is_null($cod) && is_null($dni) && is_null($paterno) && is_null($materno)) {
                 $msn = "No ingresaste ningun PARAMETRO DE BÚSQUEDA";
-                return back()->with('error', $msn);
+                return back()->withInput()->with('error', $msn);
             }
         } catch (Throws $e) {
             return back()->with('error', $e);
