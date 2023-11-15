@@ -16,7 +16,7 @@ class SeederTablaConceptos extends Seeder
     {
         Conceptos::create([
             'tipo_permiso_id'=>2,
-            'descripcion'=>'20 PRIMEROS DÍAS DESCANSO MÉDICO',
+            'descripcion'=>'PRIMEROS 20 DÍAS DESCANSO MÉDICO',
             'codigo_pdt'=>"20"
         ]);
         Conceptos::create([
