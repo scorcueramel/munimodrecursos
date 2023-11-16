@@ -56,6 +56,16 @@ class AislamientosController extends Controller
                 }
                 return $periodo;
             })
+            ->addColumn('obs',function ($row){
+                $obs = "";
+                if($row['comentario'] == "")
+                {
+                    $obs = "S/O";
+                }else{
+                    $obs = $row['comentario'];
+                }
+                return $obs;
+            })
             ->addColumn('nro_contacto',function ($row){
                 $nro_contacto = "";
                 if($row['numero_contacto'] == "")
