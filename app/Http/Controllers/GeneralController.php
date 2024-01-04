@@ -52,6 +52,8 @@ class GeneralController extends Controller
 
                 $res = $response->json();
 
+                dd($res);
+
                 if (count($res['contenido']) > 0) {
                     return back()->with('resp', $res['contenido']);
                 } else {
